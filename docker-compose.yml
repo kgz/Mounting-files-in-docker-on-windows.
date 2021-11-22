@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+    web:
+        build: 
+            context: .
+            dockerfile: Dockerfile
+            network: host
+        ports:
+            - "5000:5000"
+        volumes:
+            - /srv/nextcloud/data/admin/files
+            # use docker volume create [OPTIONS] [VOLUME]
+            #- in windows will mount to 
+            #   \\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes\<volume_name>\_data
